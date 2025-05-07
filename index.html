@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Corporations</title>
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+
+    <body>
+        <header>    
+            <div id="players">
+            </div>
+            <div id="dices_container">
+                <div id="dices">
+                    <img id="dice1" class="dice">
+                    <img id="dice2" class="dice">
+                </div>
+                <button id="rollDiceButton">Roll dices</button>
+            </div>
+        </header>
+        
+        <main>
+            <div id="board">
+                <div class="center">
+                    <div class="corpo-deck">
+                        <div class="deck">Corpo</div>
+                    </div>
+                    <h1 class="title">Corporations</h1>
+                    <div class="luck-deck">
+                        <div class="deck">Luck</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+
+    <script type="module">
+        import { game } from './js/index.js';
+        window.game = game;
+    </script>
+
+</html>

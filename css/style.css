@@ -1,0 +1,465 @@
+@font-face {
+    font-family: 'PP Neue Machina';
+    src: url('/assets/fonts/PPNeueMachina-Regular.woff') format('woff'),
+        url('/assets/fonts/PPNeueMachina-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+:root 
+{
+    --main-bg-color: #010101;
+    --secondary-color: #00FF8C;
+    --third-color: #FF00AE;
+    --font-size: 2vw;
+    --border-width: 1vh;
+    --border-radius: 10px;
+    --margin: 1vw;
+    font-family: 'PP Neue Machina', sans-serif;
+
+}
+
+body
+{
+    margin: 0;
+    padding: 0;
+    background-color: var(--main-bg-color);
+    color: var(--secondary-color);
+    font-size: 1.5vw;
+    display: flex;
+}
+
+header
+{
+    display: flex;
+    align-items: start;
+    background-color: var(--main-bg-color);
+    font-weight: bold;
+    width: fit-content;
+    height: 100vh;
+}
+#players
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.player_score
+{
+    margin-top: 5px;
+    padding: 15px;
+    width: 100%;
+    font-size: large;
+    border: dashed 2px var(--third-color);
+    border-top-right-radius: 10%;
+    border-bottom-right-radius: 10%;
+    width: 15vw;
+
+}
+.fading-alert-box
+{
+    position: fixed;
+    top: 5vh;
+    align-self: center;
+    left: 34vw;
+    width: 30vw;
+    height: 20vh;
+    background-color: #010101;
+    z-index: 10000;
+    padding: 10px;
+    border: solid var(--border-width) var(--secondary-color);
+    color: var(--third-color);
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+}
+.fading-alert-box div
+{
+    display: flex;
+    justify-content: space-around;
+}
+
+
+#dices_container
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1vh;
+}
+button
+{
+    background-color: var(--third-color);
+    font-family: 'PP Neue Machina';
+    color: var(--main-bg-color);
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 1vh;
+    font-size: 1vw;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.5s;
+
+}
+
+button:hover
+{
+    background-color: var(--secondary-color);
+    color: var(--main-bg-color);
+    transform: scale(1.1);
+}
+
+main
+{
+    padding: 0;
+    margin: 0;
+    width: max-content;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+#board
+{
+    height: 20vw;
+    display: grid;
+	grid-template-columns: 100px repeat(9, 80px) 100px;
+	grid-template-rows: 100px repeat(9, 80px) 100px;
+	background: black;
+    scale: 0.62;
+    width: fit-content;
+}
+.center
+{
+	grid-column: 2 / 11;
+	grid-row: 2 / 11;
+	display: grid;
+    background-image: url('../assets/img/fond_center.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.title
+{
+	grid-column: 5 / 10;
+	grid-row: 2/10;
+	font-size: 90px;
+	font-weight: 400;
+	letter-spacing: 12px;
+    translate: -30px 70px;
+    transform: rotate(-45deg);
+}
+.deck 
+{
+	border: 3px dashed var(--third-color);
+	width: 160px;
+	height: 120px;
+    text-align: center;
+}
+
+.corpo-deck 
+{
+	grid-column: 1 / 4;
+	grid-row: 1 / 4;
+	transform: rotate(135deg);
+	margin-bottom: 60px;
+	margin-right: 60px;
+}
+
+.luck-deck 
+{
+	grid-column: 7 / 7;
+	grid-row: 6 / 7;
+	transform: rotate(315deg);
+	margin-top: 60px;
+	margin-left: 60px;
+}
+
+#dices
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: var(--margin);
+}
+
+#dices img 
+{
+    width: 4vw;
+    height: 4vw;
+    transition: transform 0.3s;
+    margin-left: var(--margin);
+    margin-right: var(--margin);
+}
+
+#dices img:hover 
+{
+    transform: scale(1.1);
+}
+
+.cell
+{
+    color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8vw;
+    background-color: var(--main-bg-color);
+    position: relative;
+    padding-top: 1.5vw;
+    padding-left: 0.5vw;
+    padding-right: 0.5vw;
+    padding-bottom: 0.5vw;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.cell:hover
+{
+    transform: scale(1.05);
+    transition: all 0.5s;
+}
+
+.color-banner {
+    margin-bottom: 50px;
+    width: 100%;
+    height: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.BROWN
+{
+    background-color: #8B4513;
+}
+
+.RED
+{
+    background-color: #FF0000;
+}
+
+.YELLOW
+{
+    background-color: #FFFF00;
+}
+
+.LIGHT_BLUE
+{
+    background-color: #ADD8E6;
+}
+
+.DARK_BLUE
+{
+    background-color: #0000FF;
+}
+
+.ORANGE
+{
+    background-color: #FFA500;
+}
+
+.GREEN
+{
+    background-color: #008000;
+}
+
+.PINK
+{
+    background-color: #e24a91;
+}
+
+.player
+{
+    position: absolute;
+    border-radius: 50%;
+    scale: 5;
+}
+
+.red_player
+{
+    border: solid 2px red;
+}
+
+.blue_player
+{
+    border: solid 2px blue;
+}
+
+.purple_player 
+{
+    border: solid 2px var(--third-color);
+}
+
+
+.yellow_player
+{
+    border: solid 2px yellow;
+}
+
+.top_owned 
+{
+    height: 20px;
+    width: 50px;
+    position: absolute;
+    top: -25;
+    border-radius: 30px;
+}
+
+.left_owned 
+{
+    height: 50px;
+    width: 20px;
+    position: absolute;
+    left: -25;
+    border-radius: 30px;
+}
+
+.bottom_owned 
+{
+    height: 20px;
+    width: 50px;
+    position: absolute;
+    bottom: -25;
+    border-radius: 30px;
+}
+
+.right_owned 
+{
+    height: 50px;
+    width: 20px;
+    position: absolute;
+    right: -25;
+    border-radius: 30px;
+}
+
+.yellow_owned
+{
+    background-color: yellow;
+}
+
+.red_owned
+{
+    background-color: red;
+}
+
+.blue_owned
+{
+    background-color: blue;
+}
+
+.purple_owned
+{
+    background-color: var(--third-color);
+}
+
+.property-box
+{
+    position: fixed;
+    top: auto;
+    align-self: center;
+    left: 34vw;
+    width: 30vw;
+    height: 20vh;
+    background-color: #010101;
+    z-index: 10000;
+    padding: 10px;
+    border: solid var(--border-width) var(--secondary-color);
+    color: var(--third-color);
+    text-align: center;
+}
+.property-box-details
+{
+    position: fixed;
+    top: auto;
+    align-self: center;
+    left: 39vw;
+    width: 20vw;
+    height: fit-content;
+    background-color: #010101;
+    z-index: 10000;
+    padding: 20px;
+    border: solid var(--border-width) var(--secondary-color);
+    color: var(--third-color);
+    text-align: center;
+}
+
+.property-box div
+{
+    display: flex;
+    justify-content: space-around;
+}
+
+canvas
+{
+    width: 100%;
+}
+
+.jail-box
+{
+    position: fixed;
+    top: auto;
+    align-self: center;
+    left: 35vw;
+    width: 30vw;
+    height: 20vh;
+    background-color: #010101;
+    z-index: 10000;
+    padding: 20px;
+    border: solid var(--border-width) var(--secondary-color);
+    color: var(--third-color);
+    text-align: center;
+}
+
+.jail-box div
+{
+    display: flex;
+    justify-content: space-around;
+}
+
+.corpo_card_drawn
+{
+    display: block;
+}
+
+.luck_card_drawn
+{
+    display: block;
+}
+.current_player
+{
+    transition: all 0.5s;
+    border: solid 2px;
+    border-color:  var(--third-color);
+    background-color: var(--third-color);
+    color: whitesmoke;
+}
+form
+{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin: 1vh;
+    padding: 5vh;
+    height: fit-content;
+    border: solid 1px var(--third-color);
+    width: 25vw;
+    translate: 35vw;
+    text-align: center;
+}
+
+form input
+{
+    margin: 1vh;
+    padding: 1vh;
+    border: solid 1px var(--third-color);
+    border-radius: var(--border-radius);
+    background-color: var(--main-bg-color);
+    color: var(--secondary-color);
+    width: 24vw;
+}
+

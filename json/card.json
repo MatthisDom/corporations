@@ -1,0 +1,189 @@
+[
+    {
+        "name": "revenez à la case départ",
+        "type": "luck",
+        "description": "Vous avez été élu président du conseil d'administration. Recevez 200€.",
+        "action": "goToStart"
+    },
+    {
+        "name": "Erreur en votre faveur",
+        "type": "luck",
+        "description": "Une erreur de la banque en votre faveur ! gagner 30₵ ",
+        "action": "addMoney",
+        "amount": 30
+    },
+    {
+        "name": "Erreur en votre faveur",
+        "type": "luck",
+        "description": "Une erreur de la banque en votre faveur ! gagner 80₵ ",
+        "action": "addMoney",
+        "amount": 80
+    },
+    {
+        "name": "Erreur en votre faveur",
+        "type": "luck",
+        "description": "Une erreur de la banque en votre faveur ! gagner 10₵ ",
+        "action": "addMoney",
+        "amount": 10
+    },
+    {
+        "name": "Payez une amende de 50€",
+        "type": "luck",
+        "description": "Vous avez été pris en excès de vitesse. Payez 50€.",
+        "action": "subMoney",
+        "amount": 50
+    },
+    {
+        "name": "Recevez 50€ de chaque joueur",
+        "type": "luck",
+        "description": "C'est votre anniversaire. Recevez 50€ de chaque joueur.",
+        "action": "anniversary",
+        "amount": 50
+    },
+    {
+        "name": "Aller en prison",
+        "type": "luck",
+        "description": "Allez directement en prison. Ne passez pas par la case départ. Ne recevez pas 200€.",
+        "action": "goToJail"
+    },
+    {
+        "name": "Vous devez aller en urgence à un voyage d'affaire aller à la gare",
+        "type": "luck",
+        "description": "Vous devez aller en urgence à un voyage d'affaire. Allez à la gare la plus proche.",
+        "action": "goTo",
+        "position": 6
+    },
+    {
+        "name": "Voyage d'affaire",
+        "type": "luck",
+        "description": "Vous entendez une possibilité d'affaire, vous allez investir dans une société.",
+        "action": "goTo",
+        "position": 11
+    },
+    {
+        "name": "Voyage d'affaire",
+        "type": "luck",
+        "description": "Vous entendez une possibilité d'affaire, vous allez investir dans une société.",
+        "action": "goTo",
+        "position": 39
+    },
+    {
+        "name": "Sortez de prison gratuitement",
+        "type": "luck",
+        "description": "Vous avez trouvé une carte de sortie de prison. Conservez-la jusqu'à ce que vous en ayez besoin.",
+        "action": "getOutOfJail"
+    },
+    {
+        "name": "inflation",
+        "type": "corpo",
+        "description": "les prix ont augmenté de 10% !",
+        "action": "inflation",
+        "amount": 10
+    },
+    {
+        "name": "déflation",
+        "type": "corpo",
+        "description": "les prix ont baissé de 10% !",
+        "action": "deflation",
+        "amount": 10
+    },
+    {
+        "name": "Augmentation du SMIC",
+        "type": "corpo",
+        "description": "Le SMIC a augmenté de 150₵ !",
+        "action": "increaseSalary",
+        "amount": 150
+    },
+    {
+        "name": "Baisse du SMIC fulgurante !", 
+        "type": "corpo",
+        "description": "Le SMIC a baissé de 150₵ !",
+        "action": "decreaseSalary",
+        "amount": 150
+    },
+    {
+        "name": "Augmentation des taxes",
+        "type": "corpo",
+        "description": "Les taxes ont augmenté de 100₵ !",
+        "action": "increaseTax",
+        "amount": 100
+    },
+    {
+        "name": "Baisse des taxes",
+        "type": "corpo",
+        "description": "Les taxes ont baissé de 50₵ !",
+        "action": "decreaseTax",
+        "amount":50
+    },
+    {
+        "name": "Augmentation du SMIC",
+        "type": "corpo",
+        "description": "Le SMIC a augmenté de 30₵ !",
+        "action": "increaseSalary",
+        "amount": 30  
+    },
+    {
+        "name": "Baisse du SMIC",
+        "type": "corpo",
+        "description": "Le SMIC a baissé de 20₵ !",
+        "action": "decreaseSalary",
+        "amount": 20
+    },
+    {
+        "name": "Augmentation des taxes",
+        "type": "corpo",
+        "description": "Les taxes ont augmenté de 50₵ !",
+        "action": "increaseTax",
+        "amount": 50
+    },
+    {
+        "name": "Baisse des taxes",
+        "type": "corpo",
+        "description": "Les taxes ont baissé de 50₵ !",
+        "action": "decreaseTax",
+        "amount": 50
+    },
+    {
+        "name": "Augmentation du SMIC",
+        "type": "corpo",
+        "description": "Le SMIC a augmenté de 20₵ !",
+        "action": "increaseSalary",
+        "amount": 20
+    },
+    {
+        "name": "Baisse du SMIC",
+        "type": "corpo",
+        "description": "Le SMIC a baissé de 35₵ !",
+        "action": "decreaseSalary",
+        "amount": 35
+    },
+    {
+        "name": "Augmentation des taxes",
+        "type": "corpo",
+        "description": "Les taxes ont augmenté de 15₵ !",
+        "action": "increaseTax",
+        "amount": 15
+    },
+    {
+        "name": "Baisse des taxes",
+        "type": "corpo",
+        "description": "Les taxes ont baissé de 10₵ !",
+        "action": "decreaseTax",
+        "amount": 10
+    },
+    {
+        "name": "Crack boursier",
+        "type": "corpo",
+        "description": "Le marché boursier s'effondre !",
+        "action": "stockMarketCrash",
+        "amount": 100
+    },
+    {
+        "name": "Hausse glorieuse des actions",
+        "type": "corpo",
+        "description": "Le marché boursier explose !",
+        "action": "stockMarketRise",
+        "amount": 100
+    }
+    
+]
