@@ -1,0 +1,81 @@
+#form_container 
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    width: 50vw;
+    margin: 1vh;
+    background-color: var(--main-bg-color);
+    color: var(--secondary-color);
+    font-size: var(--font-size);
+    border: 5px solid var(--secondary-color);
+    border-radius: var(--border-radius);
+}
+
+#mode_selector
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 50vw;
+    align-items: center;
+    justify-self: center;
+    text-align: center;
+    align-self: center;
+    margin-bottom: 5vh;
+}
+
+.mode
+{
+    width: 50%;
+    align-items: center;
+    color: var(--secondary-color);
+    cursor: pointer;
+}
+
+.active
+{
+    background-color: var(--secondary-color);
+    color: var(--main-bg-color);
+}
+
+form
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+input[type="text"], 
+input[type="password"]
+{
+    width: 70%;
+    padding: 1vh;
+    margin: 1vh;
+    align-self: center;
+    border: 1px solid var(--secondary-color);
+    border-radius: var(--border-radius);
+    background-color: var(--main-bg-color);
+    color: var(--secondary-color);
+    font-size: var(--font-size);
+}
+
+button
+{
+    width: 70%;
+    padding: 1vh;
+    margin: 1vh;
+    align-self: center;
+    background-color: var(--third-color);
+    color: var(--main-bg-color);
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: var(--font-size);
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.5s;
+}

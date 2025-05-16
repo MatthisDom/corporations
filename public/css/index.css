@@ -30,13 +30,6 @@
     padding: 5vw;
 }
 
-header
-{
-    height: 10vh;
-    display: flex;
-    justify-content: space-around;
-}
-
 main
 {
     height: 80vh;
@@ -92,7 +85,7 @@ a:hover
         width: 80vw;
         font-size: large;
     }
-
+ 
     footer
     {
         padding-left: 5vw;

@@ -26,6 +26,14 @@ body
     margin: 0;
 }
 
+header
+{
+    height: 10vh;
+    display: flex;
+    justify-content:right;
+    align-items: center;
+    padding-right: 3vw;
+}
 
 button
 {
