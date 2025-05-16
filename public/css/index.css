@@ -62,3 +62,53 @@ a:hover
     text-decoration: underline;
     transition: all 0.5s;
 }
+
+@media screen and (max-width: 768px) 
+{
+    #title
+    {
+        width: 100vw;
+    }
+
+    #title div
+    {
+        text-align: center;
+    }
+
+    #mode_selector
+    {
+        flex-direction: column;
+        width: 100vw;
+    }
+    
+    .mode
+    {
+        width: 80vw;
+        margin-bottom: 1vh;
+    }
+
+    button
+    {
+        width: 80vw;
+        font-size: large;
+    }
+
+    footer
+    {
+        padding-left: 5vw;
+        padding-right: 5vw;
+        flex-direction: column;
+        align-items: center;
+        flex-direction: column-reverse;
+    }
+
+    footer > :first-child { order: 3; }
+    footer > :nth-child(2) { order: 2; }
+    footer > :last-child { order: 1; }
+
+    .dot
+    {
+        display: none;
+    }
+    
+}
