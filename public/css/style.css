@@ -1,7 +1,8 @@
-@font-face {
+@font-face 
+{
     font-family: 'PP Neue Machina';
-    src: url('/src/assets/fonts/PPNeueMachina-Regular.woff') format('woff'),
-        url('/src/assets/fonts/PPNeueMachina-Regular.woff2') format('woff2');
+    src: url('/public/assets/fonts/PPNeueMachina-Regular.woff') format('woff'),
+        url('/public/assets/fonts/PPNeueMachina-Regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
