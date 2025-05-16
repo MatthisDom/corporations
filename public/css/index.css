@@ -1,0 +1,64 @@
+#title
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+
+#mode_selector
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 50vw;
+    align-items: center;
+    justify-self: center;
+    align-self: center;
+    margin-top: 10vh;
+}
+
+.mode
+{
+    display: flex;
+    align-items: center;
+    font-size: 1.5vw;
+    color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+    padding: 5vw;
+}
+
+header
+{
+    height: 10vh;
+    display: flex;
+    justify-content: space-around;
+}
+
+main
+{
+    height: 80vh;
+}
+
+footer
+{
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 30vw;
+    padding-right: 30vw;
+}
+
+a
+{
+    text-decoration: none;
+    color: var(--third-color);
+}
+
+a:hover
+{
+    text-decoration: underline;
+    transition: all 0.5s;
+}
