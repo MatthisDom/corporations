@@ -30,7 +30,8 @@
     </body>
 </html>
 
-<script>
+<script type="module">
+
     const loginForm = document.getElementById('login_form');
     const registerForm = document.getElementById('register_form');
     const loginButton = document.getElementById('login');
@@ -48,5 +49,45 @@
         registerForm.style.display = 'flex';
         registerButton.classList.add('active');
         loginButton.classList.remove('active');
+    });
+
+    registerForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const username = document.getElementById('register_username').value;
+        const password = document.getElementById('register_password').value;
+
+        try 
+        {
+            const response = await fetch('/api/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ username, password })
+            });
+
+            async function fetchAndShowUsers() 
+            {
+                const response2 = await fetch('/api/users');
+                const users = await response2.json();
+                console.log(users);
+            }
+
+            if(response.ok) 
+            {
+                alert('Registration successful! You can now log in.');
+                
+                loginButton.click();
+            } 
+            else 
+            {
+                const errorMsg = await response.text();
+                alert('Registration failed. Please try again.'+ response.status + ' ' + errorMsg);
+            }
+        } 
+        catch (error) 
+        {
+            console.error('Error:', error);
+        }
     });
 </script>

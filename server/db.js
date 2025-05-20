@@ -1,13 +1,14 @@
 import { Low } from 'lowdb'
 import { JSONFile } from 'lowdb/node'
 
+// Correction : fournir la valeur par défaut à la création de Low
 const adapter = new JSONFile('db.json')
-const db = new Low(adapter)
+export const db = new Low(adapter, { users: [] })
 
-await db.read()
+export async function initDB() {
+  await db.read()
+  if (!db.data) db.data = { users: [] }
+  await db.write()
+}
 
-db.data ||= { users: [], games: [] }
-
-await db.write()
-
-export default db
+// Appel de l'init au démarrage du serveur (dans server.js)
