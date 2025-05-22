@@ -90,4 +90,38 @@
             console.error('Error:', error);
         }
     });
+
+    loginForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const username = document.getElementById('login_username').value;
+        const password = document.getElementById('login_password').value;
+
+        try 
+        {
+            const response = await fetch('/api/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ username, password })
+            });
+
+            if(response.ok) 
+            {
+                alert('Login successful!');
+                window.location.href = '/';
+                localStorage.setItem('token', response.headers.get('Authorization'));
+                localStorage.setItem('username', username);
+            } 
+            else 
+            {
+                const errorMsg = await response.text();
+                alert('Login failed. Please check your credentials.'+ response.status + ' ' + errorMsg);
+            }
+        } 
+        catch (error) 
+        {
+            console.error('Error:', error);
+        }
+    });
 </script>

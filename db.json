@@ -3,6 +3,19 @@
     {
       "username": "ender",
       "password": "ender"
+    },
+    {
+      "username": "matthis",
+      "password": "matthis"
+    },
+    {
+      "username": "azerty",
+      "password": "azerty"
+    },
+    {
+      "username": "blabla",
+      "password": "blabla",
+      "image_url": "..."
     }
   ]
 }

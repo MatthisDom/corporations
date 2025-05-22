@@ -11,7 +11,7 @@ class AuthUserHeader extends HTMLElement {
 
     updateUser() {
         const token = localStorage.getItem('token');
-        const userName = localStorage.getItem('userName');
+        const userName = localStorage.getItem('username');
         const userImage = localStorage.getItem('userImage');
         const userNameSpan = this.shadowRoot.getElementById('user_name');
         const userImageEl = this.shadowRoot.getElementById('user_image');
