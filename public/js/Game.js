@@ -21,19 +21,37 @@ export default class Game
         this.board = new Board();
         let color = ['red', 'blue', 'purple', 'yellow'];
         return this.board.init().then(() => {
-            for (let i = 0; i < this.playernumber; i++)
+            for(let i = 0; i < this.playernumber; i++)
             {
-                this.players.push(new Player(i, `Player ${i + 1}`, color[i]));
+                if(i == 0)
+                {
+                    this.players.push(new Player(i, localStorage.getItem('playername'),color[i]));
+                }
+                else
+                {
+                    this.players.push(new Player(i, `Player ${i + 1}`, color[i]));
+                }
             }
+            console.log(...this.players);
+            // Log avant shuffle (copie du tableau)
+            console.log('Avant shuffle', this.players.map(p => p.name));
+            // Mélange les joueurs après leur création
+            for (let i = this.players.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [this.players[i], this.players[j]] = [this.players[j], this.players[i]];
+            }
+            // Log après shuffle (copie du tableau)
+            console.log('Après shuffle', this.players.map(p => p.name));
             for (let i = 0; i < this.playernumber; i++)
             {
-                this.players[i].init();
-                document.getElementById('players').innerHTML += `<div id="player${i}" class="player_score"><h4>${this.players[i].name}</h4><span>${this.players[i].money}₵</span></div>`;
+                const player = this.players[i];
+                player.init();
+                document.getElementById('players').innerHTML += `<div id="player${player.id}" class="player_score"><h4>${player.name}</h4><span>${player.money}₵</span></div>`;
                 const playerElement = document.createElement('div');
-                playerElement.id = `${i}`;
+                playerElement.id = `${player.id}`;
                 playerElement.className = 'player';
-                const cellElement = document.getElementById(`cell${this.players[i].cellPosition}`);
-                playerElement.className += ` ${color[i]}_player`;
+                const cellElement = document.getElementById(`cell${player.cellPosition}`);
+                playerElement.className += ` ${player.color}_player`;
                 if (cellElement) {
                     cellElement.appendChild(playerElement);
                 }
@@ -373,6 +391,7 @@ export default class Game
         if(this.players.length == 1)
         {
             alert(this.players[0].name + ' a gagné !');
+            window.location.href = './index.html';
             return true;
         }
         return false;

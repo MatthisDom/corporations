@@ -56,3 +56,19 @@ button:hover
     color: var(--main-bg-color);
     transform: scale(1.1);
 }
+
+solo-settings
+{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 25%;
+    left: 35vw;
+    width: 25vw;
+    font-family: 'PP Neue Machina';
+    padding: 16px;
+    background-color: #010101;
+    color: var(--third-color);
+    border: solid var(--border-width) var(--secondary-color);
+    border-radius: 8px;
+}

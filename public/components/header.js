@@ -30,7 +30,7 @@ class AuthUserHeader extends HTMLElement {
 
             logoutButton.addEventListener('click', () => {
                 localStorage.removeItem('token');
-                localStorage.removeItem('userName');
+                localStorage.removeItem('username');
                 localStorage.removeItem('userImage');
                 window.location.href = './index.html';
             });

@@ -10,7 +10,7 @@
     <body>
         <header>
             <auth-user-header></auth-user-header>
-            <script src="header.js"></script>
+            <script src="../components/header.js"></script>
         </header>
 
         <main>
@@ -20,7 +20,7 @@
             </div>
 
             <div id="mode_selector">
-                <div id="singleplayer" class="mode"><button onclick="window.location = './game.html'">singleplayer</button></div>
+                <div id="singleplayer" class="mode"><button id="singleplayer_btn">singleplayer</button></div>
                 <div id="multiplayer" class="mode"><button>multiplayer</button></div>
             </div>
         </main>
@@ -33,4 +33,18 @@
             <div><a href="/public/contact.html">Contact</a></div>
         </footer>
     </body>
+
+    <script type="module">
+        import '../components/soloSettings.js';
+
+        const single_btn = document.querySelector('#singleplayer_btn');
+        single_btn.addEventListener('click', () => {
+            if (!document.querySelector('solo-settings')) 
+            {
+                const body = document.querySelector('body');
+                const soloSettings = document.createElement('solo-settings');
+                body.appendChild(soloSettings);
+            }
+        });
+    </script>
 </html>
